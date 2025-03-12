@@ -15,10 +15,12 @@ fetch(uri + '/consultas')
             const card = document.createElement('div');
             card.innerHTML = `
             <h2>Consulta Agendada</h2>
-            <p>Paciente: ${consulta.nome_paciente}</p>
-            <p>Médico: ${consulta.nome_medico}</p>
-            <p>Data: ${new Date(consulta.data_hora).toLocaleDateString('pt-br')}</p>
-            <p>Hora: ${consulta.data_hora.split('T')[1].substring(0, 5)}</p>
+            <p>Paciente:<label contentetable=true>${consulta.nome_paciente}</label></p>
+            <p>Médico: <label contentetable=true>${consulta.nome_medico}</label></p>
+            <p>Data: <label contentetable=true>${new Date(consulta.data_hora).toLocaleDateString('pt-br')}</label></p>
+            <p>Hora: <label contentetable=true>${consulta.data_hora.split('T')[1].substring(0, 5)}</label></p>
+            <div>
+            <button onclick="deleter"
             `;
             main.appendChild(card);
         });
